@@ -1,8 +1,6 @@
 //Variable That will see if it's time to a Break
 let timesExecuted = 0;
 
-
-
 function SetCountdown(){
     //THAT FUNCTION WILL BE RESPONSIBLE TO SET COUNTDOWN TO BREAK OR TO FOCUS
     
@@ -59,7 +57,7 @@ function ChangeLayout(startOrStop){
 function StartCountdown(){
     ChangeLayout('Start');
     SetCountdown();
-    Interval = setInterval(Countdown, 100);
+    Interval = setInterval(Countdown, 1000);
 
 
 }
