@@ -1,7 +1,7 @@
-//Initial Time
-let time = 25 * 60;
 //Variable That will see if it's time to a Break
 let timesExecuted = 0;
+
+
 
 function SetCountdown(){
     //THAT FUNCTION WILL BE RESPONSIBLE TO SET COUNTDOWN TO BREAK OR TO FOCUS
@@ -18,45 +18,58 @@ function SetCountdown(){
     switch(timesExecuted){
         case 1:
         case 3: // Normal break
-            document.getElementById("Alert").innerHTML = "Time To A Break! Go Get A Water!"
+            document.getElementById("alert").innerHTML = "Tempo da pausa! Vá pegar uma agua!"
             time = 5 * 60;
+            
             break;
         case 5: // Long break
-            document.getElementById("Alert").innerHTML = "Time To A Long Break! Go Get A Snack!"
+            document.getElementById("alert").innerHTML = "Pare um pouco! Vá pegar um lanche!"
             time = 15 * 60;
             break;
         case 6: // Restart Looping
             timesExecuted = 0;
             break;
         default: // Default -> 0,2,4
-            document.getElementById("Alert").innerHTML = "Time To Focus! Let's Go!"
+            document.getElementById("alert").innerHTML = "Hora De Focar!"
             time = 25 * 60;
             break;
     }
-
+    document.getElementById("alert").classList.remove("invisible")
 }
 
-function EnableButtons(startOrStop){
+function ChangeLayout(startOrStop){
     if (startOrStop == 'Start'){
-        document.getElementById("ButtonStart").disabled = true;
-        document.getElementById("ButtonStop").disabled = false;
+        document.getElementById("buttonStart").disabled = true;
+        document.getElementById("buttonStop").disabled = false;
+
+        document.getElementById("buttonStart").classList.add("invisible")
+        document.getElementById("title").classList.add("invisible");
+        document.getElementById("idTimer").classList.add("focused")
     }else{
-        document.getElementById("ButtonStart").disabled = false;
-        document.getElementById("ButtonStop").disabled = true;
-        document.getElementById("Timer").innerHTML = '25:00'
+        document.getElementById("buttonStart").disabled = false;
+        document.getElementById("buttonStop").disabled = true;
+        document.getElementById("idTimer").innerHTML = '25:00'
+
+        document.getElementById("buttonStart").classList.remove("invisible")
+        document.getElementById("title").classList.remove("invisible");
+        document.getElementById("idTimer").classList.remove("focused")
     }
 }
 
 function StartCountdown(){
-    EnableButtons('Start');
+    ChangeLayout('Start');
     SetCountdown();
-    Interval = setInterval(Countdown, 1000);
+    Interval = setInterval(Countdown, 100);
+
+
 }
 
 function StopCountdown(){
-    EnableButtons('Stop');
+    ChangeLayout('Stop');
     clearInterval(Interval)
     time = 25 * 60;
+    timesExecuted = 0;
+    document.getElementById("alert").classList.add("invisible")
 }
 
 function Countdown(){
@@ -67,12 +80,14 @@ function Countdown(){
     seconds = seconds < 10 ? '0' + seconds : seconds;
     minutes = minutes < 10 ? '0' + minutes : minutes;
 
-    document.getElementById('Timer').innerHTML = minutes + ':' + seconds;
+    document.getElementById('idTimer').innerHTML = minutes + ':' + seconds;
 
     if (time > 0) {
         time--;
     } else {
-        TimesExecuted++;
-        setCoutdown();
+        timesExecuted++;
+        SetCountdown();
     }
 }
+
+

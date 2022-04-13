@@ -1,0 +1,67 @@
+
+
+/* All */
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Containers And Divs */
+
+.container-fluid{
+    height: 100vh;
+    background-color: #e5ecf4;
+}
+
+.divTimer{ 
+    text-align: center;
+}
+
+#ChangeBackColor{
+    background-color: #f2f2f2;
+}
+
+/* Texts */
+
+.defaultTitle{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px #534163;
+    padding: 1%;
+}
+
+#title{
+    margin-bottom: 200px;
+}
+
+.timer{
+    font-size: 5.5rem;
+    text-shadow: 1px 1px #534163;
+}
+
+.alert{
+    margin: 20px;
+    font-size: 1.5rem;
+}
+
+.focused{
+    font-size: 10rem;
+}
+
+.history{
+    text-align: left;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 500px) and (min-width: 0px) {
+    
+    #title{
+        margin-bottom: 100px;
+    }
+    
+    .focused{
+        font-size: 6rem;
+    }
+}
