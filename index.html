@@ -5,33 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JS, Timer, Temporizador, Pomodoro, Estrategia">
+    <meta name="author" content="Jarbas Vitor">
+    <meta name="description" content="Site que aplica a estrategia do Timer Pomodoro. Simples e Facil!">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="script.js" defer></script>
-    <title>Temporizador Pomodoro</title>
+    <title>Timer Pomodoro</title>
 </head>
 
 <body>
     <div class="container-fluid">
-
         <h1 class="defaultTitle" id="title">POMODORO TIMER</h1>
-
         <div class="divTimer">
             <h1 id="idTimer" class="timer">25:00</h1>
         </div>
-
         <div class="d-grid gap-2 col-6 mx-auto">
             <div id="alert" class="alert alert-primary invisible" role="alert">Teste</div>
             <button class="btn btn-primary btn-lg" onclick="StartCountdown()" id="buttonStart">Start</button>
             <button class="btn btn-danger btn-lg" onclick="StopCountdown()" id="buttonStop" disabled>Stop</button>
         </div>
-
     </div>
 
 
     <div id="ChangeBackColor" class="container-fluid">
-
         <h1 class="defaultTitle">Tecnica de Pomodoro</h1>
 
         <p class="history">Essa técnica, foi desenvolvida no final dos anos 80 pelo Francesco Cirillo. Com intuito
@@ -43,7 +41,7 @@
         </p>
 
         <h3 class="defaultTitle">Como Fazer?</h3>
-        
+
         <p class="history">
             O ideal é dividir o fluxo de trabalho em blocos, assim você tem sua concentração em uma tarefa um pouco
             mais simples do que o projeto todo. melhorando a agilidade do cérebro e estimulando o foco!
@@ -57,10 +55,13 @@
             pausa aumenta para 15 minutos e depois retona para 5.
         </p>
     </div>
-
-    <footer>
-
-    </footer>
+    <div id="footer" class="container-fluid">
+        <footer >
+            <p>Desenvolvido Por Jarbas Vitor.</p>
+            <p>Linkedin: <a href="https://www.linkedin.com/in/jarbasvitor/">Jarbas Vitor</a></p>
+            <p>Github: <a href="https://github.com/JarbasVitor">Jarbas Vitor</a></p>
+        </footer>
+    </div>
 </body>
 
 </html>
